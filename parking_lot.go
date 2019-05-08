@@ -49,22 +49,6 @@ func (s *Slot) IsEmpty() bool {
 	return flag
 }
 
-//ReadLines read file and returns array of string
-func ReadLines(path string) ([]string, error) {
-	file, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-	defer file.Close()
-
-	var lines []string
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		lines = append(lines, scanner.Text())
-	}
-	return lines, scanner.Err()
-}
-
 //ArrayToString convert array of int to string with delimiter
 func ArrayToString(a []int, delim string) string {
 	return strings.Trim(strings.Replace(fmt.Sprint(a), " ", delim, -1), "[]")
@@ -280,6 +264,22 @@ func (s *Slot) RunCommand(out io.Writer, line string) {
 	default:
 		fmt.Fprintln(out, "Invalid input")
 	}
+}
+
+//ReadLines read file and returns array of string
+func ReadLines(path string) ([]string, error) {
+	file, err := os.Open(path)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var lines []string
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+	return lines, scanner.Err()
 }
 
 func main() {

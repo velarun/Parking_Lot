@@ -35,6 +35,7 @@ func TestCreatingParkingLot(t *testing.T) {
 	resp1 := ParkingLotTestVar.Create(maxSize)
 	exptString := fmt.Sprintf("Created parking lot with %d slots", maxSize)
 	equals(t, exptString, resp1)
+	t.Log("Created parking lot and string matches")
 
 	resp2 := ParkingLotTestVar.Create(0)
 	equals(t, "Sorry, parking lot is not created", resp2)
