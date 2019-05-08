@@ -5,7 +5,10 @@ Pre-requistie:
 Golang should be installed. 
 
 Version > 1.10.1
-Parking_Lot should be place in $GOPATH.
+
+Setup:
+
+./setup 
 
 Description:
 
@@ -22,7 +25,7 @@ Interactive mode:
 
 File mode:
 
-./parking_lot.exe ../src/fixtures/file_input.txt
+./parking_lot.exe ../file_input.txt
 
 
 Run Test suite:
@@ -130,3 +133,6 @@ $ ./parking_lot_testsuite
 --- PASS: TestRunCommandTask (0.00s)
 PASS
 ok  	command-line-arguments	(cached)
+PASS
+coverage: 79.5% of statements
+ok  	_/Users/velu/workspace/Parking_Lot	0.010s
